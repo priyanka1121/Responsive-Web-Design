@@ -1,0 +1,148 @@
+:root {
+    --grey: #393939;
+    --grey-light: #DCDCDC;
+    --facebook: #3B5998;
+    --instagram: #E1306C;
+    --twitter: #3CF;
+    --youtube: #FF0000;
+    --twitch: #6441A5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: var(--grey);
+    background-color: var(--grey-light);
+}
+
+.social-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+.social-item {
+    padding: 1em;
+}
+
+.social-link {
+    width: 5em;
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0px 5px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.social-link:before {
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 95%;
+    left: -195%;
+    transform: rotate(45deg);
+    z-index: 1;
+    animation-duration: 0.65s;
+    transform-origin: bottom;
+}
+
+.social-link:hover::before {
+    animation-name: animate;
+    animation-timing-function: ease;
+    top: -54%;
+    left: -80%;
+}
+
+.social-link i {
+    font-size: 2em;
+    transform: scale(0.8);
+    transition: all 0.5s;
+}
+
+.social-link:hover i {
+    color: white;
+    z-index: 2;
+    transform: scale(1);
+}
+
+.social-link:active i {
+    transform: scale(0.9);
+}
+
+.facebook-item .social-link::before {
+    background-color: var(--facebook);
+}
+
+.facebook-item i {
+    color: var(--facebook);
+}
+
+.instagram-item .social-link::before {
+    background-color: var(--instagram);
+}
+
+.instagram-item i {
+    color: var(--instagram);
+}
+
+.twitter-item .social-link::before {
+    background-color: var(--twitter);
+}
+
+.twitter-item i {
+    color: var(--twitter);
+}
+
+.youtube-item .social-link::before {
+    background-color: var(--youtube);
+}
+
+.youtube-item i {
+    color: var(--youtube);
+}
+
+.twitch-item .social-link::before {
+    background-color: var(--twitch);
+}
+
+.twitch-item i {
+    color: var(--twitch);
+}
+
+@keyframes animate {
+    0% {
+        top: 95%;
+        left: -195%;
+    }
+
+    60% {
+        top: -75%;
+        left: -50%;
+    }
+
+    100% {
+        top: -54%;
+        left: -80%;
+    }
+}
